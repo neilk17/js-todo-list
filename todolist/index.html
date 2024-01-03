@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Heading Styling */
+        .heading {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the Task Input and Add Button */
+        #taskInput,
+        #addTaskButton {
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+        }
+
+        #addTaskButton {
+            background-color: #2c3e50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #addTaskButton:hover {
+            background-color: #34495e;
+        }
+
+        /* To-Do List Styling */
+        .todo {
+            list-style-type: none;
+            padding: 0;
+            max-width: 300px;
+            margin: auto;
+        }
+
+        .todo li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Hover Effect for List Items */
+        .todo li:hover {
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">Todo List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button id="addTaskButton">Add Task</button>
+    <ul class="todo">
+    </ul>
+
+    <script>
+        const taskInput = document.getElementById('taskInput');
+        const addTaskButton = document.getElementById('addTaskButton');
+        const todoList = document.querySelector('.todo');
+
+        function addTask() {
+            const task = taskInput.value.trim();
+
+            if (task) {
+                const listItem = document.createElement('li');
+                listItem.textContent = task;
+                todoList.appendChild(listItem);
+                taskInput.value = '';
+            } else {
+                alert("Please enter a task!");
+            }
+        }
+
+        addTaskButton.addEventListener('click', addTask);
+    </script>
+</body>
+
+</html>
