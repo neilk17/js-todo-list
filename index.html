@@ -21,26 +21,18 @@
         }
 
         /* Styling for the Task Input and Add Button */
-        #taskInput,
-        #addTaskButton {
+        #taskInput {
             padding: 10px;
             margin: 5px;
-            border: 2px solid #2c3e50;
+            border: none;
             border-radius: 5px;
+            background-color: #fff;
         }
 
-        #addTaskButton {
-            background-color: #2c3e50;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        #taskInput {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        #addTaskButton:hover {
-            background-color: #34495e;
-        }
-
-        /* To-Do List Styling */
         .todo {
             list-style-type: none;
             padding: 0;
@@ -53,7 +45,6 @@
             margin-bottom: 10px;
             padding: 15px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
 
@@ -65,31 +56,11 @@
 </head>
 
 <body>
-    <h1 class="heading">Todo List</h1>
-    <input type="text" id="taskInput" placeholder="Enter a new task">
-    <button id="addTaskButton">Add Task</button>
+    <input aria-placeholder="text" id="taskInput" placeholder="Write a new task">
     <ul class="todo">
     </ul>
 
-    <script>
-        const taskInput = document.getElementById('taskInput');
-        const addTaskButton = document.getElementById('addTaskButton');
-        const todoList = document.querySelector('.todo');
-
-        function addTask() {
-            const task = taskInput.value.trim();
-
-            if (task) {
-                const listItem = document.createElement('li');
-                listItem.textContent = task;
-                todoList.appendChild(listItem);
-                taskInput.value = '';
-            } else {
-                alert("Please enter a task!");
-            }
-        }
-
-        addTaskButton.addEventListener('click', addTask);
+    <script src="js/script.js">
     </script>
 </body>
 
