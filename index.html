@@ -1,67 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Heading Styling */
-        .heading {
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        /* Styling for the Task Input and Add Button */
-        #taskInput {
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-
-        #taskInput {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .todo {
-            list-style-type: none;
-            padding: 0;
-            max-width: 300px;
-            margin: auto;
-        }
-
-        .todo li {
-            background-color: #fff;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: left;
-        }
-
-        /* Hover Effect for List Items */
-        .todo li:hover {
-            background-color: #ecf0f1;
-        }
-    </style>
+    <link href="output.css" rel="stylesheet">
 </head>
-
 <body>
-    <input aria-placeholder="text" id="taskInput" placeholder="Write a new task">
-    <ul class="todo">
-    </ul>
-
+    <main class="flex flex-col justify-start items-center h-screen">
+        <input class="mt-20" aria-placeholder="text" id="taskInput" placeholder="Write a new task">
+        <ul class="todo flex flex-col items-start">
+        </ul>
+    </main>
     <script src="js/script.js">
     </script>
 </body>
-
 </html>

@@ -20,5 +20,3 @@ taskInput.addEventListener('keypress', function (event) {
         addTask();
     }
 });
-
-addTaskButton.addEventListener('click', addTask);
