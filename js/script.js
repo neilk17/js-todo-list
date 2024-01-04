@@ -7,6 +7,8 @@ function addTask() {
 
     if (task) {
         const listItem = document.createElement('li');
+        listItem.classList.add('w-full');
+
         listItem.textContent = task;
         todoList.appendChild(listItem);
         taskInput.value = '';
